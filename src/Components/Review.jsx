@@ -2,12 +2,12 @@ import useFormStore from "../Store/Store";
 
 const Review = () => {
   const { formData, setStep, setSubmitted } = useFormStore();
-  console.log(formData);
+
   const fields = [
     { label: "First Name", value: formData?.firstName || "" },
     { label: "Last Name", value: formData?.lastName || "" },
     { label: "Email", value: formData?.email || "" },
-    { label: "Phone", value: formData?.phone || formData?.contactNumber || "" },
+    { label: "Phone", value: formData?.phone || "" },
     { label: "Date of Birth", value: formData?.dob || "" },
     { label: "Address", value: formData?.address || "" },
     { label: "City", value: formData?.city || "" },
@@ -15,10 +15,7 @@ const Review = () => {
     { label: "PIN Code", value: formData?.pin || "" },
     { label: "Username", value: formData?.username || "" },
     { label: "Account Type", value: formData?.accountType || "" },
-    {
-      label: "Contact Number",
-      value: formData?.contactNumber || formData?.phone || "",
-    },
+    { label: "Contact Number", value: formData?.contactNumber || "" },
     { label: "Password", value: formData?.password ? "••••••••" : "—" },
   ];
 
